@@ -1,71 +1,110 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Rushil Anirudh</title>
-    <style>
-      body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      header {
-        background-color: #333;
-        color: #fff;
-        padding: 20px;
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-      nav {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-      nav a {
-        color: #333;
-        display: inline-block;
-        margin: 0 10px;
-        text-decoration: none;
-      }
-      main {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-      }
-      .profile-photo {
-        display: block;
-        margin: 0 auto;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-      footer {
-        background-color: #ebebeb;
-        color: #000000;
-        padding: 1px;
-        max-width: 800px;
-        text-align: center;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
+
+<head>
+  <title>Rushil Anirudh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    li {
+      padding-bottom: 10px; /* Adjust the value as needed */
+    }
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #333;
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .profile-photo {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    footer {
+      background-color: #ebebeb;
+      color: #000000;
+      padding: 1px;
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
 <body>
   <header>
     <h1>Rushil Anirudh</h1>
   </header>
   <nav>
     <a href="index.html">Home</a>
-    <a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Publications</a>
-    
+    <a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate"
+      target="_blank">Publications</a>
+
   </nav>
   <main>
     <p>Hi! I am an applied scientist at Amazon, working within the Ads / Sponsored Products org.</p>
-  
 
+    <h4> (9/25/2024) Recent papers accepted for publication: </h4>
+    <ul>
+      <li> <b>[NeurIPS 2024]</b> <i>On the Use of Anchoring for Training Vision Models</i> (<a href="https://arxiv.org/pdf/2406.00529" target="_blank">arXiv</a>)
+        <br><br>tldr: Explores short comings of anchoring for ViTs and fixes them to show significant improvements in
+        ImageNet-1K OOD detection, calibration, generalization benchmarks.
+      </li>
+      <li> <b>[ICML 2024]</b> PAGER: Accurate Failure Characterization in Deep Regression Models (<a href="https://openreview.net/forum?id=5353dJE9Ek" target="_blank">openreview</a>)
+        <br><br>tldr: Failures in classifiers is clear (mis-classification rate) and well studied (OOD detection etc.), but very
+        tricky in regression problems -- PAGER takes a step in formalizing failure analysis using a combination of
+        epistemic and non-conformity scores
+      </li>
+      <li> <b>[ICLR 2024]</b> Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks
+        (<a href="https://openreview.net/forum?id=ZL6yd6N1S2" target="_blank">openreview</a>)(<a href="https://pujacomputes.github.io/gduq/" target="_blank">webpage</a>)
+        <br> <br> tldr: Introduces G-ΔUQ (pronounced "G-DUCK"), a novel training protocol for graph neural networks that supports
+        reliable epistemic uncertainty estimates for graph classification and node classification tasks -- lot of SoTA
+        results!
+      </li>
+      <li> <b>[Machine Learning Sci & Tech]</b> Transformer-Powered Surrogates Close the ICF Simulation-Experiment Gap with
+        Extremely Limited Data (arXiv, published article)
+        <br><br> tldr: New training and model selection protocol for Transformer surrogates, which improve existing methods on
+        few-shot adaption to real world ICF experiments by ~40% improvement in predictive performance.
+      </li>
   </main>
   <footer>
     <p>&copy; 2024 Rushil Anirudh. All rights reserved.</p>
   </footer>
 </body>
+
 </html>
