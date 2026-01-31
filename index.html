@@ -1,157 +1,537 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rushil Anirudh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
-    li {
-      padding-bottom: 10px; /* Adjust the value as needed */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    :root {
+      --bg-light: #fdfbf9;
+      --bg-card: #fff8f0;
+      --accent-warm: #e67e22;
+      --accent-warm-dim: #d35400;
+      --accent-blue: #1e3a8a;
+      --accent-blue-light: #3b82f6;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555555;
+      --text-tertiary: #888888;
+      --border: #f0e6dc;
+      --border-blue: #dbeafe;
+    }
+
     body {
-      font-family: 'Lato', sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
+    .container {
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 0 24px;
     }
 
-    nav {
+    /* Header */
+    header {
+      padding: 60px 0 40px;
+      border-bottom: 2px solid var(--accent-blue);
+      background: linear-gradient(to bottom, #f8fafc 0%, var(--bg-light) 100%);
+    }
+
+    .header-content {
       display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: #333;
-      display: inline-block;
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 20px; /* Set the base font size for the main menu items */
-    }
-
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav li {
-      position: relative;
-    }
-
-    nav li ul {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    nav li:hover > ul {
-      display: block;
-    }
-
-    nav li ul a {
-      color: #333;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-size: 18px; /* Set the font size for the submenu items */
-    }
-
-    nav li ul a:hover {
-      background-color: #ddd;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
+      align-items: center;
+      gap: 40px;
     }
 
     .profile-photo {
-      display: block;
-      margin: 0 auto;
-      width: 200px;
-      height: 200px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
+      border: 3px solid var(--accent-blue);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
     }
 
-    footer {
-      background-color: #ebebeb;
-      color: #000000;
-      padding: 1px;
-      max-width: 800px;
+    .profile-photo:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
+    }
+
+    .header-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .header-text .tagline {
+      font-size: 19px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    /* Navigation */
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      background: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      letter-spacing: 0.01em;
+      background: white;
+    }
+
+    nav a:hover {
+      background: var(--accent-blue);
+      color: white !important;
+      border-color: var(--accent-blue);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);
+    }
+
+    /* Main Content */
+    main {
+      padding: 48px 0;
+    }
+
+    .intro {
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 56px;
+      max-width: 900px;
+      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    /* Section Headers */
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+      position: relative;
+      padding-left: 16px;
+      color: var(--accent-blue);
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 22px;
+      background: var(--accent-warm);
+      border-radius: 2px;
+    }
+
+    /* Timeline - Wrapping Grid */
+    .timeline {
+      margin-bottom: 56px;
+    }
+
+    .timeline-track {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px 16px;
+      position: relative;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-content {
+      background: white;
+      border: 2px solid var(--border-blue);
+      border-radius: 12px;
+      padding: 16px 12px;
       text-align: center;
-      margin: 0 auto;
+      transition: all 0.3s ease;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-item:hover .timeline-content {
+      border-color: var(--accent-blue);
+      box-shadow: 0 4px 16px rgba(30, 58, 138, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      background: white;
+      border: 3px solid var(--accent-blue);
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.2s ease;
+      z-index: 2;
+    }
+
+    .timeline-item:hover .timeline-dot {
+      background: var(--accent-blue);
+      box-shadow: 0 0 16px rgba(30, 58, 138, 0.4);
+    }
+
+    .timeline-role {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .timeline-company {
+      font-size: 14px;
+      color: var(--text-primary);
+      font-weight: 500;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      font-style: italic;
+      flex-grow: 1;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .timeline-date {
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      padding-top: 8px;
+      border-top: 1px solid var(--border);
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-track {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-left: 32px;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -26px;
+        top: 0;
+        bottom: -24px;
+        width: 2px;
+        background: linear-gradient(180deg, var(--accent-blue) 0%, var(--border-blue) 100%);
+      }
+
+      .timeline-item:last-child::before {
+        bottom: 50%;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: -32px;
+        top: 20px;
+        transform: none;
+      }
+
+      .timeline-content {
+        text-align: left;
+      }
+    }
+
+    /* Publications */
+    .publication {
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .publication:hover {
+      border-color: var(--accent-warm);
+      box-shadow: 0 4px 16px rgba(230, 126, 34, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .pub-badge {
+      display: inline-block;
+      background: var(--accent-warm);
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .pub-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .pub-description {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pub-link {
+      color: var(--accent-blue-light);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border: 1px solid var(--accent-blue-light);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .pub-link:hover {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 2px solid var(--accent-blue);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      background: #f8fafc;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 28px;
+      }
+
+      .header-text h1 {
+        font-size: 32px;
+      }
+
+      .header-text .tagline {
+        font-size: 15px;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Rushil Anirudh</h1>
-  </header>
-  <nav>
-    <a href="index.html"><b> Home</b></a>
-    <a href="about.html"><b> About</b></a>
-    <a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate"target="_blank"><b>Google Scholar</b></a>
-    <a href="https://www.linkedin.com/in/rushilanirudh/"target="_blank"><b>Linkedin</b></a>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <img src="images/profile.jpeg" alt="Rushil Anirudh" class="profile-photo">
+        <div class="header-text">
+          <h1>Rushil Anirudh</h1>
+          <p class="tagline">Applied Scientist @ Amazon AGI · Frontier Model Customization</p>
+        </div>
+      </div>
+    </header>
 
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/rushilanirudh/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </nav>
 
-  </nav>
-  <main>
-    <img src="profile.jpeg" alt="Profile Photo" class="profile-photo">     
-    <p>Hi! I am an applied scientist at Amazon, working within the Ads / Sponsored Products org. Before this, I spent 7.5 years at Lawrence Livermore National Laboratory leading ML research efforts (securing funding, hiring, managing) on foundational and applied ML problems.</p>
-    <h4> Career Timeline </h4>  
+    <main>
+      <p class="intro">
+        I work on customizing frontier models for downstream applications at Amazon AGI. Before this, I spent ~14 months in Ads improving recommendations to drive shopper engagement and Amazon's retail business. Prior to Amazon, I spent 7.5 years at Lawrence Livermore National Laboratory as a Project Lead on foundational and applied ML problems.
+      </p>
 
-    <ul>
-      <li> Applied Science @ Amazon Ads <span style="float: right;">(1/2024- present)</span> </li>
-      <li> Principal Scientist, Lawrence Livermore National Laboratory <span style="float: right;">(10/2016-12/2023)</span></li>
-      <li> Postdoc, IBM Research Almaden<span style="float: right;">(4/2016-10/2016)</span></li>
-      <li> PhD Student, Arizona State University <span style="float: right;">(8/2010-3/2016)</span></li>
-    </ul>
+      <section>
+        <h2>Career</h2>
+        <div class="timeline">
+          <div class="timeline-track">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-role">Applied Scientist</div>
+                <div class="timeline-company">Amazon AGI</div>
+                <div class="timeline-date">05/2025 – Present</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-role">Applied Scientist</div>
+                <div class="timeline-company">Amazon Ads</div>
+                <div class="timeline-date">01/2024 – 05/2025</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-role">Principal Scientist</div>
+                <div class="timeline-company">Lawrence Livermore National Laboratory</div>
+                <div class="timeline-date">10/2016 – 12/2023</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-role">Postdoc</div>
+                <div class="timeline-company">IBM Research Almaden</div>
+                <div class="timeline-date">04/2016 – 10/2016</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-role">PhD</div>
+                <div class="timeline-company">Arizona State University</div>
+                <div class="timeline-date">08/2010 – 03/2016</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <h4> (9/25/2024) Recent papers accepted for publication: </h4>
-    <ul>
-      <li> <b>[NeurIPS 2024]</b> <span style="background-color: yellow;"> spotlight! </span><i>On the Use of Anchoring for Training Vision Models</i> (<a href="https://arxiv.org/pdf/2406.00529" target="_blank">arXiv</a>)
-        <br>Explores short comings of anchoring for ViTs and fixes them to show significant improvements in
-        ImageNet-1K OOD detection, calibration, generalization benchmarks.
-      </li>
-      <li> <b>[ICML 2024]</b> <i>PAGER: Accurate Failure Characterization in Deep Regression Models</i> (<a href="https://openreview.net/forum?id=5353dJE9Ek" target="_blank">openreview</a>)
-        <br>Failures in classifiers is clear (mis-classification rate) and well studied (OOD detection etc.), but very
-        tricky in regression problems -- PAGER takes a step in formalizing failure analysis using a combination of
-        epistemic and non-conformity scores
-      </li>
-      <li> <b>[ICLR 2024]</b> <i>Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks</i>
-        (<a href="https://openreview.net/forum?id=ZL6yd6N1S2" target="_blank">openreview</a>)(<a href="https://pujacomputes.github.io/gduq/" target="_blank">webpage</a>)
-        <br> Introduces G-ΔUQ (pronounced "G-DUCK"), a novel training protocol for graph neural networks that supports
-        reliable epistemic uncertainty estimates for graph classification and node classification tasks -- lot of SoTA
-        results!
-      </li>
-      <li> <b>[IOP Machine Learning Sci & Tech]</b> <i>Transformer-Powered Surrogates Close the ICF Simulation-Experiment Gap with
-        Extremely Limited Data</i> (<a href="https://iopscience.iop.org/article/10.1088/2632-2153/ad4e03" target="_blank">article</a>)
-        <br> New training and model selection protocol for Transformer surrogates, which improve existing methods on
-        few-shot adaption to real world ICF experiments by ~40% improvement in predictive performance.
-      </li>
-  </main>
-  <footer>
-    <p>&copy; 2024 Rushil Anirudh. All rights reserved.</p>
-  </footer>
+      <section>
+        <h2>Recent Work</h2>
+        
+        <div class="publication">
+          <span class="pub-badge">AWS Re:Invent 2025</span>
+          <div class="pub-title">Amazon Nova Forge</div>
+          <div class="pub-description">
+            The easiest and most cost-effective way to build your own frontier model.
+          </div>
+          <div class="pub-links">
+            <a href="https://aws.amazon.com/nova/forge/" target="_blank" class="pub-link">Product →</a>
+          </div>
+        </div>
+
+        <div class="publication">
+          <span class="pub-badge">NeurIPS 2024</span>
+          <div class="pub-title">On the Use of Anchoring for Training Vision Models</div>
+          <div class="pub-description">
+            Explores shortcomings of anchoring for ViTs and fixes them to show significant improvements in ImageNet-1K OOD detection, calibration, and generalization benchmarks.
+          </div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2406.00529" target="_blank" class="pub-link">arXiv →</a>
+          </div>
+        </div>
+
+        <div class="publication">
+          <span class="pub-badge">ICML 2024</span>
+          <div class="pub-title">PAGER: Accurate Failure Characterization in Deep Regression Models</div>
+          <div class="pub-description">
+            Failures in classifiers are clear (mis-classification rate) and well studied (OOD detection etc.), but very tricky in regression problems. PAGER takes a step in formalizing failure analysis using a combination of epistemic and non-conformity scores.
+          </div>
+          <div class="pub-links">
+            <a href="https://openreview.net/forum?id=5353dJE9Ek" target="_blank" class="pub-link">OpenReview →</a>
+          </div>
+        </div>
+
+        <div class="publication">
+          <span class="pub-badge">ICLR 2024</span>
+          <div class="pub-title">Accurate and Scalable Estimation of Epistemic Uncertainty for Graph Neural Networks</div>
+          <div class="pub-description">
+            Introduces G-ΔUQ (pronounced "G-DUCK"), a novel training protocol for graph neural networks that supports reliable epistemic uncertainty estimates for graph classification and node classification tasks. Lot of SoTA results!
+          </div>
+          <div class="pub-links">
+            <a href="https://openreview.net/forum?id=ZL6yd6N1S2" target="_blank" class="pub-link">OpenReview →</a>
+            <a href="https://pujacomputes.github.io/gduq/" target="_blank" class="pub-link">Project Page →</a>
+          </div>
+        </div>
+
+        <div class="publication">
+          <span class="pub-badge">IOP ML Sci & Tech</span>
+          <div class="pub-title">Transformer-Powered Surrogates Close the ICF Simulation-Experiment Gap with Extremely Limited Data</div>
+          <div class="pub-description">
+            New training and model selection protocol for Transformer surrogates, which improve existing methods on few-shot adaption to real world ICF experiments by ~40% improvement in predictive performance.
+          </div>
+          <div class="pub-links">
+            <a href="https://iopscience.iop.org/article/10.1088/2632-2153/ad4e03" target="_blank" class="pub-link">Article →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Rushil Anirudh</p>
+    </footer>
+  </div>
 </body>
-
-</html> 
+</html>

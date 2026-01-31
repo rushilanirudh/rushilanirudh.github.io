@@ -1,183 +1,281 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Rushil Anirudh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rushil Anirudh - About</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <style>
-    li {
-      padding-bottom: 20px; /* Adjust the value as needed */
-    }
-    body {
-      font-family: 'Lato', sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-light: #fdfbf9;
+      --bg-card: #fff8f0;
+      --accent-warm: #e67e22;
+      --accent-warm-dim: #d35400;
+      --accent-blue: #1e3a8a;
+      --accent-blue-light: #3b82f6;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555555;
+      --text-tertiary: #888888;
+      --border: #f0e6dc;
+      --border-blue: #dbeafe;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
     header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 60px 0 40px;
+      border-bottom: 2px solid var(--accent-blue);
+      background: linear-gradient(to bottom, #f8fafc 0%, var(--bg-light) 100%);
     }
 
-    nav {
+    .header-content {
       display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: #333;
-      display: inline-block;
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 20px; /* Set the base font size for the main menu items */
-    }
-
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav li {
-      position: relative;
-    }
-
-    nav li ul {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    nav li:hover > ul {
-      display: block;
-    }
-
-    nav li ul a {
-      color: #333;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-size: 18px; /* Set the font size for the submenu items */
-    }
-
-    nav li ul a:hover {
-      background-color: #ddd;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
+      align-items: center;
+      gap: 40px;
     }
 
     .profile-photo {
-      display: block;
-      margin: 0 auto;
-      width: 200px;
-      height: 200px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
+      border: 3px solid var(--accent-blue);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
+    }
+
+    .header-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .header-text .tagline {
+      font-size: 19px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      background: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      letter-spacing: 0.01em;
+      background: white;
+    }
+
+    nav a:hover {
+      background: var(--accent-blue);
+      color: white !important;
+      border-color: var(--accent-blue);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);
+    }
+
+    main {
+      padding: 48px 0;
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      margin-top: 48px;
+      position: relative;
+      padding-left: 16px;
+      color: var(--accent-blue);
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 22px;
+      background: var(--accent-warm);
+      border-radius: 2px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    p em {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 17px;
+    }
+
+    code {
+      background: var(--bg-card);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-warm);
+      font-size: 14px;
+      border: 1px solid var(--border);
+    }
+
+    a {
+      color: var(--accent-blue-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent-blue);
+      text-decoration: underline;
     }
 
     footer {
-      background-color: #ebebeb;
-      color: #000000;
-      padding: 1px;
-      max-width: 800px;
+      border-top: 2px solid var(--accent-blue);
+      padding: 32px 0;
       text-align: center;
-      margin: 0 auto;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      background: #f8fafc;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 28px;
+      }
+
+      .header-text h1 {
+        font-size: 32px;
+      }
+
+      .header-text .tagline {
+        font-size: 15px;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
-<header>
-    <h1>Rushil Anirudh</h1>
-  </header>
-  <nav>
-    <a href="index.html"><b> Home</b></a>
-    <a href="about.html"><b> About</b></a>
-    <a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate"target="_blank"><b>Google Scholar</b></a>
-    <a href="https://www.linkedin.com/in/rushilanirudh/"target="_blank"><b>Linkedin</b></a>
-
-
-  </nav>
 <body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <img src="profile.jpeg" alt="Rushil Anirudh" class="profile-photo">
+        <div class="header-text">
+          <h1>Rushil Anirudh</h1>
+          <p class="tagline">Applied Scientist @ Amazon AGI · Frontier Model Customization</p>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/rushilanirudh/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </nav>
+
     <main>
-    
-    <img src="profile.jpeg" alt="Profile Photo" class="profile-photo">     
+      <h2>Contact</h2>
+      <p>I can be reached via email at (remove spaces and brackets):<br><code>[firstname] [15] [lastname] [] at [gmail] dot [com]</code></p>
 
-    <h3> Contact</h3>
-    I can be reached via email at (remove spaces and brackets):<br> <code>[firstname] [15] [lastname] [] at [gmail] dot [com] </code>
-    
-    <h3>Research Themes</h3>
-        <ul>
-        <li><strong> Uncertainty Quantification</strong>:
-        characterizing and improving ML model behavior under distribution shifts.
-        </li>
-        <li><strong> Knowledge-driven</strong>: leveraging
-        external knowledge to improve zero shot, few shot learning.
-    </li> 
-    <li><strong>Generative
-                Modeling &amp; Imaging</strong><em>: </em>solving ill-posed inverse imaging problems with novel
-        generative priors.
-    </li>
-    <li><strong> Sim2Real with ML</strong><em>:
-        </em>Understanding the challenges of transferring, generalizing ML models trained on simulation data to the real
-        world
-    </li>
-    </ul>
+      <h2>Research Interests</h2>
+      <p><em>I currently work on customizing Frontier-class LLMs and VLMs exploring ideas such as compute efficiency, generalization and adaptation.</em> In the past I spent time studying uncertainty quantification, knowledge-driven learning, and robust generalization across distribution shifts. In general, I enjoy developing methods to better understand model's limitations, and make them aware of these for more robust performance.</p>
 
+      <h2>Outreach & Other Efforts</h2>
+      <p>Previously at LLNL, I led the <a href="https://data-science.llnl.gov/open-data-initiative" target="_blank">Open Data Initiative</a> with the goal of releasing LLNL's high impact scientific datasets for machine learning. <em>AI.gov <a href="https://www.ai.gov/" target="_blank">cited</a> this effort under "DATA RESOURCES FOR AI R&D"!</em></p>
+      
+      <p>I also serve on the program committees for several ML and vision venues <em>(NeurIPS, CVPR, ICLR, ICCV, ICML, AAAI)</em>.</p>
 
+      <h2>Education & Background</h2>
+      <p><a href="images/img_20160223_150408.jpg" target="_blank">I got my PhD</a> from Arizona State University (ASU) working with <a href="http://www.pavanturaga.com" target="_blank">Prof. Pavan Turaga</a>. In grad school, I developed tools spanning computer vision, machine learning, and <a href="https://en.wikipedia.org/wiki/Riemannian_geometry" target="_blank">Riemannian Geometry</a> to improve our understanding of human movement and activity, when observed through various visual and non-visual sensors.</p>
 
-    <h3>Outreach &amp; Other Efforts</h3>
-    Previously at LLNL, I led the <a
-            href="https://data-science.llnl.gov/open-data-initiative" target="_blank"
-            rel="noreferrer noopener"><strong>Open Data Initiative</strong></a> with the goal of releasing LLNL’s high
-        impact scientific datasets for machine learning — so far, we have 10+ datasets and counting!
-        <br><strong>AI.gov</strong> <a href="https://www.ai.gov/strategic-pillars/infrastructure/" target="_blank"
-            rel="noreferrer noopener">recently cited</a> this effort under “DATA RESOURCES FOR AI R&amp;D”! <br><br>I
-        also serve on the program committees for several ML and vision venues (NeurIPS, CVPR, ICLR, ICCV, ICML, AAAI).
-    </p>
+      <p>My PhD thesis is available for download here — <a href="https://search.proquest.com/openview/29021d83ed5bc8db3cb97b88ee47c18d/1" target="_blank"><em>Statistical and dynamical modeling of Riemannian trajectories with application to human movement analysis</em></a></p>
 
+      <p>I also received my M.S. (2012) from ASU, and my B.Tech (2010) from <a href="https://en.wikipedia.org/wiki/National_Institute_of_Technology,_Karnataka" target="_blank">National Institute of Technology Karnataka (NITK)</a>, <em>consistently ranked among the top 10 engineering schools in India.</em></p>
 
-
-
-
-
-    <p><a rel="noopener" href="https://rushila.com/wp-content/uploads/2018/12/img_20160223_150408.jpg" target="_blank">I
-            got my PhD,</a>&nbsp;from Arizona State University (ASU) working with&nbsp;<a
-            href="http://www.pavanturaga.com" target="_blank">Prof. Pavan Turaga</a>. In grad school, I developed tools spanning
-        computer vision, machine learning, and <a href="https://en.wikipedia.org/wiki/Riemannian_geometry" target="_blank">Riemannian
-            Geometry</a> to improve our understanding of human movement and activity, when observed through various
-        visual and non-visual sensors.</p>
-
-
-
-    <p>My PhD thesis is available for download here — <a class="gsc_title_link"
-            href="https://search.proquest.com/openview/29021d83ed5bc8db3cb97b88ee47c18d/1" target="_blank"><em>Statistical and dynamical
-                modeling of Riemannian trajectories with application to human movement analysis</em></a></p>
-
-
-
-    <p>I also received my M. S. (2012) from ASU, and my B. Tech (2010) from <a
-            href="https://en.wikipedia.org/wiki/National_Institute_of_Technology,_Karnataka" target="_blank">National Institute of
-            Technology Karnataka (NITK)</a>, consistently ranked among the top 10 engineering schools in India.</p>
-
-
-
-    <p>Prior to that I spent two years of high school in Chennai, India and grew up in my hometown — <a
-            href="https://en.wikipedia.org/wiki/Secunderabad" target="_blank">Secunderabad</a>, India. In all I have lived in, and am
-        associated with, 6 cities across India and the US.</p>
+      <p>Prior to that I spent two years of high school in Chennai, India and grew up in my hometown — <a href="https://en.wikipedia.org/wiki/Secunderabad" target="_blank">Secunderabad</a>, India. <em>In all I have lived in, and am associated with, 6 cities across India and the US.</em></p>
     </main>
-    </body>
+
+    <footer>
+      <p>© 2026 Rushil Anirudh</p>
+    </footer>
+  </div>
+</body>
+</html>

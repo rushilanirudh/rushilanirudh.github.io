@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rushil Anirudh - Publications</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-light: #fdfbf9;
+      --bg-card: #fff8f0;
+      --accent-warm: #e67e22;
+      --accent-warm-dim: #d35400;
+      --accent-blue: #1e3a8a;
+      --accent-blue-light: #3b82f6;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555555;
+      --text-tertiary: #888888;
+      --border: #f0e6dc;
+      --border-blue: #dbeafe;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 60px 0 40px;
+      border-bottom: 2px solid var(--accent-blue);
+      background: linear-gradient(to bottom, #f8fafc 0%, var(--bg-light) 100%);
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-blue);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
+    }
+
+    .header-text h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .header-text .tagline {
+      font-size: 19px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      background: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+      letter-spacing: 0.01em;
+      background: white;
+    }
+
+    nav a:hover {
+      background: var(--accent-blue);
+      color: white !important;
+      border-color: var(--accent-blue);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);
+    }
+
+    main {
+      padding: 48px 0;
+      max-width: 1000px;
+    }
+
+    .intro {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 48px;
+      padding: 20px 24px;
+      background: white;
+      border-left: 4px solid var(--accent-warm);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    .intro a {
+      color: var(--accent-blue-light);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .intro a:hover {
+      color: var(--accent-blue);
+      text-decoration: underline;
+    }
+
+    h4 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-top: 48px;
+      margin-bottom: 24px;
+      padding-left: 16px;
+      position: relative;
+      font-family: 'Lora', Georgia, serif;
+    }
+
+    h4:first-of-type {
+      margin-top: 0;
+    }
+
+    h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 20px;
+      background: var(--accent-warm);
+      border-radius: 2px;
+    }
+
+    main ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px 0;
+    }
+
+    main li {
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      line-height: 1.6;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    main li:hover {
+      border-color: var(--accent-warm);
+      box-shadow: 0 4px 12px rgba(230, 126, 34, 0.1);
+      transform: translateX(4px);
+    }
+
+    main li b {
+      color: var(--accent-blue);
+      font-weight: 700;
+    }
+
+    main li em {
+      color: var(--text-primary);
+      font-style: italic;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 15px;
+    }
+
+    main li a {
+      color: var(--accent-blue-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    main li a:hover {
+      color: var(--accent-blue);
+      text-decoration: underline;
+    }
+
+    .highlight {
+      background: var(--accent-warm);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-left: 8px;
+    }
+
+    footer {
+      border-top: 2px solid var(--accent-blue);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      background: #f8fafc;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 28px;
+      }
+
+      .header-text h1 {
+        font-size: 32px;
+      }
+
+      .header-text .tagline {
+        font-size: 15px;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+
+      main {
+        padding: 32px 0;
+      }
+
+      h4 {
+        font-size: 20px;
+        margin-top: 36px;
+      }
+
+      li {
+        font-size: 13px;
+        padding: 14px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <img src="profile.jpeg" alt="Rushil Anirudh" class="profile-photo">
+        <div class="header-text">
+          <h1>Rushil Anirudh</h1>
+          <p class="tagline">Applied Scientist @ Amazon AGI · Frontier Model Customization</p>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/rushilanirudh/" target="_blank">LinkedIn</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="intro">
+        Selected publications are listed below. For a comprehensive and up-to-date list, please visit my 
+        <a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Google Scholar profile</a>.
+        These papers are possible because of a wonderful set of collaborators, mentors, and students over the years.
+      </div>
+
+      <h4>2023</h4>
+      <ul>
+        <li>new! <em>
+											DOLCE: A model-based probabilistic diffusion framework for limited-angle CT
+											reconstruction</em><br/>Liu, J.,
+											<strong>Anirudh, R</strong>., Thiagarajan, J.J., He, S., Mohan, K.A.,
+											Kamilov, U.S. and Kim, H., <br/>In <a href="https://iccv2023.thecvf.com/" rel="noreferrer noopener" target="_blank">ICCV 2023</a> [<a href="https://arxiv.org/abs/2211.12340" rel="noreferrer noopener" target="_blank">preprint</a>]  [<a href="https://wustl-cig.github.io/dolcewww/" rel="noreferrer noopener" target="_blank">project
+											page</a>]</li>
+        <li><em>On Estimating the Epistemic Uncertainty of Graph Neural Networks using
+											Stochastic Centering</em><br/>Trivedi, P., Heimann,
+											M.,<strong> Anirudh, R.</strong>, Koutra, D., Thiagrajan, J.J.,<br/> <a href="https://dmlr.ai/" rel="noreferrer noopener" target="_blank">Data-centric Machine Learning Research (DMLR)</a>
+											Workshop at ICML 2023. [<a href="https://dmlr.ai/assets/accepted-papers/121/CameraReady/23_DMLR_GraphUQ-2.pdf" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Characterizing Risk Regimes for Safe Deployment of Deep Regression
+											Models</em><br/>Thiagarajan, J.J.,
+											Narayanaswamy, V., Trivedi, P., <strong>Anirudh, R.</strong>,<br/><a href="https://dmlr.ai/" rel="noreferrer noopener" target="_blank">Data-centric Machine Learning Research (DMLR)</a>
+											Workshop at ICML 2023. [<a href="https://dmlr.ai/assets/accepted-papers/78/CameraReady/DMLR_Workshop_Failure_Detection_Final.pdf" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Adapting Blackbox Generative Models via Inversion</em><br/>Mitra, S., Subramanyam,
+											R., <strong>Anirudh, R.</strong>, Thiagarajan, J.J., Shukla, A. and Turaga,
+											P.K., <br/><a href="https://deployinggenerativeai.github.io/" rel="noreferrer noopener" target="_blank">Challenges of Deploying Generative AI</a> Workshop at
+											ICML 2023. [<a href="https://openreview.net/attachment?id=W6nW0luUg3&amp;name=pdf" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Improving Diversity with Adversarially Learned Transformations for Domain
+											Generalization.</em><br/>Gokhale, T.,
+											<strong>Anirudh, R.</strong>, Thiagarajan, J. J., Kailkhura, B., Baral, C.
+											and Yang, Y.,<br/>In <a href="https://wacv2023.thecvf.com/" rel="noreferrer noopener" target="_blank">WACV 2023</a> [<a href="https://arxiv.org/abs/2206.07736" rel="noreferrer noopener" target="_blank">paper</a>] [<a href="https://github.com/tejas-gokhale/ALT" rel="noreferrer noopener" target="_blank">code</a>] </li>
+        <li><em>Contrastive Knowledge-Augmented Meta-Learning for Few-Shot
+											Classification.</em><br/>Subramanyam, R.,
+											Heimann, M., Thathachar, J., <strong>Anirudh, R.</strong>, &amp;
+											Thiagarajan, J. J. <br/>In <a href="https://wacv2023.thecvf.com/" rel="noreferrer noopener" target="_blank">WACV 2023</a> [<a href="https://arxiv.org/abs/2207.12346" rel="noreferrer noopener" target="_blank">paper</a>] [<a href="https://github.com/Rakshith-2905/CAML" rel="noreferrer noopener" target="_blank">code</a>]</li>
+        <li><em>Cross-GAN Auditing: Unsupervised Identification of Attribute Level
+											Similarities and Differences between Pretrained Generative
+											Models.</em><br/>Olson, M.L., Liu, S.,
+											<strong>Anirudh, R.</strong>, Thiagarajan, J.J., Bremer, P.T. and Wong,
+											W.K. <br/>In <a href="https://cvpr2023.thecvf.com/" rel="noreferrer noopener" target="_blank">CVPR 2023</a> [<a href="https://arxiv.org/abs/2303.10774" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>The Surprising Effectiveness of Deep Orthogonal Procrustes Alignment in
+											Unsupervised Domain Adaptation.</em><br/>Thopalli, K.,
+											<strong>Anirudh, R</strong>., Turaga, P. and Thiagarajan, J.J.,  <br/>In
+											<a href="https://ieeeaccess.ieee.org/" rel="noreferrer noopener" target="_blank">IEEE Access,</a> 2023. [<a href="https://ieeexplore.ieee.org/abstract/document/10025714/" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em><em>Know Your Space: Inlier and Outlier Construction for Calibrating Medical
+												OOD</em></em><br/>Narayanaswamy, V.,
+											Mubarka, Y., <strong>Anirudh, R.</strong>, Rajan, D., Spanias, A. and
+											Thiagarajan, J.J. <br/>(oral) In Medical Imaging with
+											Deep Learning <a href="https://2023.midl.io/" rel="noreferrer noopener" target="_blank">(MIDL) 2023.</a> [<a href="https://arxiv.org/abs/2207.05286" rel="noreferrer noopener" target="_blank">paper</a>][<a href="https://github.com/LLNL/OODmedic" rel="noreferrer noopener" target="_blank">code</a>]</li>
+        <li><em>Robust Time Series Recovery and Classification Using Test-Time Noise
+											Simulator Networks</em><br/>Jeon, E., Lohit, S.,
+											<strong>Anirudh, R.</strong>, Turaga, P.<br/>In <a href="https://2023.ieeeicassp.org/" rel="noreferrer noopener" target="_blank">ICASSP 2023</a>. [paper]</li>
+      </ul>
+
+      <h4>2022</h4>
+      <ul>
+        <li><em>Single Model Uncertainty Estimation via Stochastic Data Centering</em>
+<br/>Thiagarajan*, J.J.,
+											<strong>Anirudh*, R</strong>., Narayanaswamy, V. and Bremer, P.T.,
+											(*=equal)<br/>Spotlight at <a href="https://neurips.cc/" rel="noreferrer noopener" target="_blank">NeurIPS 2022</a> <a href="https://openreview.net/forum?id=j0J9upqN5va" rel="noreferrer noopener" target="_blank">[paper]</a> [<a href="https://github.com/LLNL/DeltaUQ" rel="noreferrer noopener" target="_blank">code</a>]  <span class="highlight">Spotlight</span></li>
+        <li><em>Out of Distribution Detection using Neural Network Anchoring</em><br/><strong>Anirudh,
+												R.</strong>, and Thiagarajan, J. J., <br/>In <a href="https://www.acml-conf.org/2022/" rel="noreferrer noopener" target="_blank">ACML 2022</a> [<a href="https://arxiv.org/abs/2207.04125" rel="noreferrer noopener" target="_blank">paper</a>] [<a href="https://github.com/LLNL/AMP" rel="noreferrer noopener" target="_blank">code</a>]</li>
+        <li><em>Improved Medical
+												Out-of-Distribution Detectors For Modality and Semantic
+												Shifts</em><br/>Narayanaswamy, V.,
+											Mubaraka, Y., <strong>Anirudh, R.</strong>, Rajan, D., Spanias, A.,
+											Thiagarajan, J. J., <br/>in ICML2022 Workshop on Principles of
+											Distribution Shift [<a href="https://drive.google.com/file/d/1AlY73-_qhjpcmo1B_OvIS-RfGArrSUEB/view" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Data-Efficient Scientific
+												Design Optimization with Neural Network Surrogates,</em><br/>Thiagarajan, J. J.,
+											<strong>Anirudh, R.</strong>, Mubaraka, Y., Kim, I., Bremer, PT., Peterson,
+											J. L., Spears, B., <br/>in ICML2022 Workshop on Adaptive
+											Experimental Design and Active Learning in the Real World [<a href="https://realworldml.github.io/files/cr/paper29.pdf" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li> <em>Accurate Calibration of
+												Agent-based Epidemiological Models with Neural Network Surrogates,</em>
+<br/><strong>Anirudh,
+												R.</strong>, Thiagarajan, J. J., Bremer, P. T., Germann, T. C., Del
+											Valle, S. Y., &amp; Streitz, F. H., <br/>in ICML2022 Workshop on Healthcare AI and
+											COVID-19 [<a href="https://proceedings.mlr.press/v184/anirudh22a/anirudh22a.pdf" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Machine Learning-Powered
+												Mitigation Policy Optimization in Epidemiological
+												Models</em>,<br/>Thiagarajan, J. J.,
+											<strong>Anirudh, R.</strong>, Bremer, P. T., Germann, T. C., Del Valle, S.
+											Y., &amp; Streitz, F. H.,<br/>in ICML2022 Workshop on Healthcare AI and
+											COVID-19 [<a href="https://proceedings.mlr.press/v184/thiagarajan22a/thiagarajan22a.pdf" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Predicting the Generalization
+												Gap in Deep Models using Anchoring</em>,<br/>Narayanaswamy, V.,
+											<strong>Anirudh, R.</strong>, Kim, I., Mubaraka, Y., Spanias, A.,
+											Thiagarajan, J. J., <br/>in ICASSP 2022. [<a href="https://ieeexplore.ieee.org/abstract/document/9747136" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Sparsity Improves Unsupervised
+												Attribute Discovery in StyleGAN</em>,<br/>Liu, S.,
+											<strong>Anirudh, R.</strong>, Thiagarajan, J. J., Bremer, P. T., <br/>in
+										ICASSP 2022. [<a href="https://ieeexplore.ieee.org/abstract/document/9746150" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+      </ul>
+
+      <h4>2021</h4>
+      <ul>
+        <li><em>Unsupervised Attribute Alignment for Characterizing Distribution
+											Shift.</em><br/>Olson, M.L., Liu, S.,
+											<strong>Anirudh, R.</strong>, Thiagarajan, J. J., Wong, W. K. and Bremer, P.
+											T.,<br/>In NeurIPS 2021 Workshop on Distribution Shifts:
+											Connecting Methods and Applications. [<a href="https://openreview.net/forum?id=Bk1hklAuZyh" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Geometric Priors for Scientific Generative Models in Inertial Confinement
+											Fusion.</em><br/>Shukla, A.,
+											<strong>Anirudh, R.</strong>, Kur, E., Thiagarajan, J. J., Bremer, P. T.,
+											Spears, B.K., Ma, T. &amp; Turaga, P.,<br/>In NeurIPS 2021 Workshop on ML for Physical
+											Sciences (ML4PS) [<a href="https://ml4physicalsciences.github.io/2021/files/NeurIPS_ML4PS_2021_126.pdf" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Data-Driven Estimation of Temporal-Sampling Errors in Unsteady
+											Flows</em>,<br/>Bhatia, H., Petruzza, S.
+											N., <strong>Anirudh, R.</strong>, Gyulassy, A. G., Kirby, R. M., Pascucci,
+											V., &amp; Bremer, P. T.,<br/>In <a href="https://www.isvc.net/" rel="noreferrer noopener" target="_blank">ISVC, 2021</a>.</li>
+        <li><em>Dynamic CT Reconstruction from Limited Views with Implicit Neural
+											Representations and Parametric Motion Fields</em>,<br/>Reed, A. W., Kim, H.,
+											<strong>Anirudh, R.</strong>, Mohan, K. A., Champley, K., Kang, J., &amp;
+											Jayasuriya, S.,<br/>ICCV, 2021. [<a href="https://openaccess.thecvf.com/content/ICCV2021/html/Reed_Dynamic_CT_Reconstruction_From_Limited_Views_With_Implicit_Neural_Representations_ICCV_2021_paper.html" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>MR-GAN: Manifold Regularized Generative Adversarial Networks for Scientific
+											Data</em>.<br/>Li, Q., Kailkhura, B.,
+											<strong>Anirudh, R.</strong>, Zhang, J., Zhou, Y., Liang, Y., Han, T.Y.J.
+											&amp; Varshney, P.K., <br/>In SIAM Mathematics of Data Science (SIMODS), 2021. [<a href="https://epubs.siam.org/doi/10.1137/20M1344299" rel="noreferrer noopener" target="_blank">paper</a>] </li>
+        <li><em>Machine Learning Methods for Autism Spectrum Disorder
+											Classification</em>.<br/><strong>Anirudh,
+												R.</strong>, and Thiagarajan, J. J.,<br/><a href="https://www.sciencedirect.com/science/article/pii/B9780128228227000089?via%3Dihub" rel="noreferrer noopener" target="_blank">Book chapter</a> in <a href="https://www.elsevier.com/books/neural-engineering-techniques-for-autism-spectrum-disorder/s-el-baz/978-0-12-822822-7" rel="noreferrer noopener" target="_blank"><em>Neural Engineering Techniques
+													for Autism Spectrum Disorder</em></a> (Editors: A. S.
+											El-Baz &amp; J. Suri, Publisher: Elsevier), 2021. </li>
+        <li><em>MARGIN: Uncovering Deep Neural Networks using Graph Signal Analysis</em>,
+										<br/><strong>Anirudh,
+												R.</strong>*, Thiagarajan, J. J.*, Sridhar, R., Bremer, P. T.,<br/>in
+										Frontiers in Big Data-Machine Learning and
+											Artificial Intelligence, May 2021. [<a href="https://arxiv.org/pdf/1711.05407" rel="noreferrer noopener" target="_blank">arxiv
+												preprint</a>] [<a href="https://www.frontiersin.org/articles/10.3389/fdata.2021.589417/full" rel="noreferrer noopener" target="_blank">paper</a>] (* = equal contribution)</li>
+        <li><em>Attribute-guided Adversarial Training for Robustness to Natural
+											Perturbations</em>,<br/>Gokhale, T.,
+											<strong>Anirudh, R.</strong>, Kailkhura, B., Thiagarajan, J. J., Baral, C.,
+											Yang, Y.,<br/>In AAAI 2021. [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/16927" rel="noreferrer noopener" target="_blank">paper</a>][<a href="https://arxiv.org/abs/2012.01806" rel="noreferrer noopener" target="_blank">arXiv
+												preprint</a>]</li>
+        <li><em>Accurate and Robust Feature Importance Estimation under Distribution
+											Shifts</em>,<br/>Thiagarajan, J. J.,
+											Narayanaswamy, V., <strong>Anirudh, R.</strong>, Bremer, P. T., Spanias,
+											A.,<br/>In AAAI 2021. [<a href="https://www.aaai.org/AAAI21Papers/AAAI-3907.ThiagarajanJ.pdf" rel="noreferrer noopener" target="_blank">paper</a>][<a href="https://arxiv.org/abs/2009.14454" rel="noreferrer noopener" target="_blank">arXiv
+												preprint</a>]</li>
+        <li><em>Recovering Trajectories of Unmarked Joints in 3D Human Actions Using Latent
+											Space Optimization</em>,<br/>Lohit, S.,
+											<strong>Anirudh, R.</strong>, Turaga, P.,<br/>In WACV 2021. <a href="https://openaccess.thecvf.com/content/WACV2021/papers/Lohit_Recovering_Trajectories_of_Unmarked_Joints_in_3D_Human_Actions_Using_WACV_2021_paper.pdf" rel="noreferrer noopener" target="_blank">[pdf</a>]</li>
+        <li><em>Generative Patch Priors for Practical Compressive Image
+											Recovery</em>,<br/><strong>Anirudh,
+												R.</strong>, Lohit, S., Turaga, P.,<br/>In WACV 2021. <a href="https://openaccess.thecvf.com/content/WACV2021/papers/Anirudh_Generative_Patch_Priors_for_Practical_Compressive_Image_Recovery_WACV_2021_paper.pdf" rel="noreferrer noopener" target="_blank">[pdf</a>] [<a href="https://github.com/rushilanirudh/GPP" rel="noreferrer noopener" target="_blank">github</a>]
+											[<a href="https://www.llnl.gov/news/lawrence-livermore-computer-scientist-heads-award-winning-computer-vision-research" rel="noreferrer noopener" target="_blank">press release</a>] <em><strong>Best Paper Honorable
+													Mention Award!</strong></em><br/> <span class="highlight">Award</span></li>
+      </ul>
+
+      <h4>2020</h4>
+      <ul>
+        <li><em>Designing Accurate Emulators for Scientific Processes using
+											Calibration-Driven Deep Models</em>,<br/>Thiagarajan, J. J.,
+											Venkatesh, B., <strong>Anirudh, R.</strong>, Bremer, P. T., Gaffney, J.,
+											Anderson, G., Spears, B.K.,<br/> In <strong>Nature
+												Communications</strong>, [<a href="https://www.nature.com/articles/s41467-020-19448-8" rel="noreferrer noopener" target="_blank">paper</a>]<strong> Featured in
+												editor's picks</strong> (<a href="https://www.nature.com/collections/ceiajcdbeb" rel="noreferrer noopener" target="_blank">link</a>)</li>
+        <li><em>Unsupervised Audio Source Separation using Generative Priors</em>,<br/>Narayanaswamy, V.,
+											Thiagarajan, J.J., <strong>Anirudh, R.</strong>, &amp; Spanias,
+											A.,<br/>In Interspeech 2020. [<a href="http://www.interspeech2020.org/uploadfile/pdf/Wed-2-4-9.pdf">paper</a>]
+											[<a href="https://github.com/vivsivaraman/sourcesepganprior" rel="noreferrer noopener" target="_blank">code</a>]</li>
+        <li><em>Uncovering Interpretable Relationships in High-Dimensional Scientific Data
+											Through Function Preserving Projections</em>,<br/>Liu, S.,
+											<strong>Anirudh, R.</strong>, Thiagarajan, J. J., &amp; Bremer, P.
+											T., <br/>In  <a href="https://publishingsupport.iopscience.iop.org/journals/machine-learning-science-and-technology/about-machine-learning-science-technology/" rel="noreferrer noopener" target="_blank">Machine Learning: Science and Technology </a>[<a href="https://iopscience.iop.org/article/10.1088/2632-2153/abab60/pdf" rel="noreferrer noopener" target="_blank">paper</a>] [<a href="https://github.com/LLNL/fpp" rel="noreferrer noopener" target="_blank">github</a>]
+</li>
+        <li><em>Improved Surrogates in Inertial Confinement Fusion with Manifold and Cycle
+											Consistencies</em>,<br/><strong>Anirudh,
+												R.</strong>, Thiagarajan, J. J., Bremer, P. T., Spears, B.K.,<br/> In
+											Proc. of National Academy of Sciences (<strong>PNAS</strong>) [<a href="https://arxiv.org/abs/1912.08113">arXiv</a>] [<a href="https://www.pnas.org/content/early/2020/04/17/1916634117" rel="noreferrer noopener" target="_blank">paper</a>] [<a href="https://github.com/rushilanirudh/macc" rel="noreferrer noopener" target="_blank">github</a>]
+											[<a href="https://drive.google.com/file/d/1aUI0nMF_DQda9a1dE8FA_ZSqwcR4zLCQ/view?usp=sharing" rel="noreferrer noopener" target="_blank">Slides</a>]</li>
+        <li><em>MimicGAN: Robust Projection onto Image Manifolds with Corruption
+											Mimicking</em>,<br/><strong>Anirudh,
+												R.</strong>, Thiagarajan, J. J., Kailkhura, B., Bremer, P. T.,<br/>In
+											International Journal of Computer Vision (<strong>IJCV</strong>) <a href="https://link.springer.com/journal/11263/topicalCollection/AC_6ad61eb3797101e639445c48547e18a3" rel="noreferrer noopener" target="_blank">Special Issue on GANs</a>, [<a href="https://link.springer.com/article/10.1007/s11263-020-01310-5" rel="noreferrer noopener" target="_blank">paper</a>][<a href="https://arxiv.org/abs/1912.07748">arXiv</a>][<a href="https://arxiv.org/abs/1805.07281" rel="noreferrer noopener" target="_blank">earlier</a> <a href="https://arxiv.org/abs/1811.08484" rel="noreferrer noopener" target="_blank">versions</a>]</li>
+        <li><em>Manifold Learning</em>,<br/>Turaga, P.,
+											<strong>Anirudh, R</strong>., Chellappa, R.,<br/>in Computer Vision. (editor:
+											Katsushi Ikeuchi) Springer, Feb 2020. [<a href="https://link.springer.com/referenceworkentry/10.1007%2F978-3-030-03243-2_824-1" rel="noreferrer noopener" target="_blank">Chapter on Springer</a>]</li>
+        <li><em>Rate-Invariant Autoencoding of Time-Series</em>,<br/>Koneripalli, K., Lohit,
+											S., <strong>Anirudh, R.</strong>, &amp; Turaga, P.,<br/>in ICASSP 2020. [<a href="https://suhaslohit.github.io/files/ICASSP20.pdf" rel="noreferrer noopener" target="_blank">preprint</a>] [<a href="https://ieeexplore.ieee.org/document/9053983" rel="noreferrer noopener" target="_blank">published version</a>]<br/></li>
+      </ul>
+
+      <h4>2019</h4>
+      <ul>
+        <li><em>Bootstrapping graph convolutional neural networks for autism spectrum
+											disorder classification</em>,<br/>Anirudh, R., &amp;
+											Thiagarajan, J. J.,<br/>in <a href="https://2019.ieeeicassp.org/">ICASSP
+												2019</a>. [<a href="https://arxiv.org/pdf/1704.07487.pdf">arXiv
+												preprint</a>]</li>
+        <li><em>Unsupervised Dimension Selection using a Blue Noise Spectrum.</em><br/>Thiagarajan, J. J.,
+											Anirudh, R., Sridhar, R., &amp; Bremer, P. T.,<br/>in <a href="https://2019.ieeeicassp.org/">ICASSP 2019</a>. [<a href="https://arxiv.org/pdf/1810.13427.pdf">arXiv preprint</a>].
+</li>
+        <li><em>Understand Deep Neural Networks through Input Uncertainties</em>,<br/>Thiagarajan, J. J., Kim,
+											I., Anirudh, R., &amp; Bremer, P. T.,<br/>in <a href="https://2019.ieeeicassp.org/">ICASSP 2019</a>
+<strong>(Oral).</strong> [<a href="https://arxiv.org/abs/1810.13425">arXiv
+												preprint</a>] <span class="highlight">Oral</span></li>
+        <li><em>Multiple Subspace Alignment Improves Domain Adaptation,</em><br/>Thopalli, K., Anirudh,
+											R., Thiagarajan, J. J., Turaga, P.,<br/>in <a href="https://2019.ieeeicassp.org/">ICASSP 2019</a>. [<a href="https://arxiv.org/abs/1811.04491">arXiv preprint</a>]</li>
+        <li><em>Extreme Few-view CT Reconstruction using Deep Inference</em>,<br/>H. Kim et al.,<br/>Deep
+											Inverse NeurIPS 2019 Workshop. [<a href="https://arxiv.org/abs/1910.05375" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Improving Limited Angle CT Reconstruction with a Robust GAN Prior,
+										</em><br/>R. Anirudh et
+											al.,<br/>Deep Inverse NeurIPS 2019 Workshop. [<a href="https://arxiv.org/abs/1910.01634" rel="noreferrer noopener" target="_blank">paper</a>]</li>
+        <li><em>Exploring Generative Physics Models with Scientific Priors in Inertial
+											Confinement Fusion, </em><br/>R. Anirudh et
+											al.,<br/>Machine Learning for Physical Sciences Workshop at NeurIPS 2019. [<a href="https://ml4physicalsciences.github.io/2019/files/NeurIPS_ML4PS_2019_37.pdf">paper</a>]
+</li>
+        <li><em>Designing Deep Inverse Models for History Matching in Reservoir
+											Simulations</em>,<br/>V. S. Narayanaswamy et
+											al.,<br/>Machine Learning for Physical Sciences Workshop at NeurIPS 2019 [<a href="https://ml4physicalsciences.github.io/2019/files/NeurIPS_ML4PS_2019_55.pdf">paper</a>]
+</li>
+        <li><em>Modeling Human Brain Connectomes using Structured Neural
+											Networks</em>,<br/>U. S. Shathamallu, et
+											al.<br/>Graph Representation Learning Workshop at NeurIPS 2019. [<a href="https://grlearning.github.io/papers/129.pdf" rel="noreferrer noopener" target="_blank">paper</a>]<br/><br/></li>
+      </ul>
+
+      <h4>2018</h4>
+      <ul>
+        <li>Thiagarajan, J.J., Jain, N., Anirudh, R., et al., <em>Bootstrapping
+											Parameter Space Exploration for Fast Tuning, </em>to appear in <a href="http://ics2018.ict.ac.cn/">ICS 2018</a>.</li>
+        <li>Anirudh, R., Kim, H., Thiagarajan, J. J., Mohan, K.A., Champley, K.,
+										Bremer, T., <em>Lose The Views: Limited Angle CT Reconstruction via Implicit
+											Sinogram Completion</em>,  [<a href="https://arxiv.org/pdf/1711.10388" rel="noreferrer noopener" target="_blank">pdf</a>] [<a href="http://openaccess.thecvf.com/content_cvpr_2018/Supplemental/3329-supp.pdf" rel="noreferrer noopener" target="_blank">supplementary material</a>]. Spotlight talk (given to
+										~7% of 3300 submissions) in <strong>CVPR</strong>, 2018.  <span class="highlight">Spotlight</span></li>
+        <li>Thiagarajan, J.J., Anirudh, R.,  et al. <em>PADDLE: Performance
+											Analysis using a Data-driven Learning Environment. </em>to appear in <a href="http://www.ipdps.org/">IPDPS 2018</a>.</li>
+        <li>Anirudh, R., Turaga, P., &amp; Srivastava, A., <em>Optimization Problems
+											Associated with Manifold-Valued Curves with Applications in Computer
+											Vision</em>. In Convex Optimization Methods in Imaging Science, 2017.
+										[<a href="https://link.springer.com/chapter/10.1007/978-3-319-61609-4_9">Springer</a>].
+									</li>
+        <li>Marathe, A., Anirudh, R., et al., <em>Performance Modeling under Resource
+											Constraints Using Deep Transfer Learning</em>,<a href="http://sc17.supercomputing.org/">SC 2017</a>. [<a href="http://charm.cs.illinois.edu/~bhatele/pubs/pdf/2017/sc2017c.pdf" rel="noreferrer noopener" target="_blank">pdf</a>]</li>
+        <li>Anirudh, R., Kailkhura, B., Thiagarajan, J. J., Bremer, T., <em>Poisson Disk
+											Sampling on the Grassmannnian: Applications in Subspace Optimization</em>,
+										CVPR Workshops 2017. [<a href="https://openaccess.thecvf.com/content_cvpr_2017_workshops/w7/papers/Anirudh_Poisson_Disk_Sampling_CVPR_2017_paper.pdf" rel="noreferrer noopener" target="_blank">pdf</a>]</li>
+        <li>Anirudh, R., Turaga, P., Su, J., &amp; Srivastava, A., <em>Elastic Functional
+											Coding of Riemannian Trajectories</em>. Accepted <strong>T-PAMI</strong>,
+										2016. -- 2016 Impact Factor: <strong>8.329 </strong>[<a href="http://arxiv.org/pdf/1603.02200v1.pdf">arXiv</a>] [<a href="https://ieeexplore.ieee.org/abstract/document/7466117">IEEE
+											Xplore</a>] [<a href="https://github.com/rushilanirudh/tsrvf" rel="noreferrer noopener" target="_blank">github</a>]
+									</li>
+        <li>Anirudh, R., &amp; Turaga, P., <em>Geometry-based symbolic approximation
+											for fast sequence matching on manifolds.</em> Accepted at
+										<strong>IJCV</strong>, 2015 -- 2015 Impact Factor:
+										<strong>4.275 </strong>[<a href="http://arxiv.org/pdf/1403.0820v2.pdf">arXiv</a>] [<a href="http://link.springer.com/article/10.1007/s11263-015-0835-8">Springer</a>]
+									</li>
+        <li>Shroff, N., Anirudh, R., &amp; Chellappa, R., <em>Summarization and search over
+											geometric spaces</em>. In Riemannian Computing in Computer Vision, 2016.[<a href="http://link.springer.com/book/10.1007/978-3-319-22957-7">Springer</a>]
+									</li>
+        <li>Anirudh, R., Masroor, A., &amp; Turaga, P., <em>Diversity promoting online
+											sampling for streaming video summarization</em>, ICIP 2016. [<a href="https://arxiv.org/pdf/1610.09582.pdf">pdf</a>]</li>
+        <li>Anirudh, R., Thiagarajan, J. J., Bremer, T., &amp; Kim, H., <em>Lung nodule
+											detection using 3D convolutional neural networks trained on weakly labeled
+											data.</em> SPIE Medical Imaging, 2016. [<a href="https://www.researchgate.net/profile/Rushil_Anirudh/publication/302072840_Lung_nodule_detection_using_3D_convolutional_neural_networks_trained_on_weakly_labeled_data/links/584b8d2008aecb6bd8c15a49.pdf">pdf</a>]
+									</li>
+        <li>Sivakumar, A., Anirudh, R., &amp; Turaga, P., <em>Geometric Compression of
+											Orientation Signals for Fast Gesture Analysis</em>. DCC 2015<em>.
+										</em>[<a href="http://www.public.asu.edu/~pturaga/papers/ManifoldCoding/GeometricQuaternion.pdf">pdf</a>]
+									</li>
+        <li>Anirudh, R., Turaga, P., Su, J., &amp; Srivastava, A., Elastic functional coding
+										of human actions: From vector-fields to latent variables. <strong>CVPR</strong>,
+										2015. [<a href="http://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Anirudh_Elastic_Functional_Coding_2015_CVPR_paper.pdf">pdf</a>][<a href="https://github.com/rushilanirudh/tsrvf" rel="noreferrer noopener" target="_blank">code</a>]</li>
+        <li>Anirudh, R., &amp; Turaga, P., <em>Interactively test driving an object
+											detector: Estimating performance on unlabeled
+											data.</em> <strong>WACV</strong>, 2014.[<a href="https://arxiv.org/pdf/1406.5653.pdf">pdf</a>]</li>
+        <li>Anirudh, R., Ramamurthy, K., Thiagarajan, J. J., Turaga, P., &amp; Spanias,
+										A.,  <em>A heterogeneous dictionary model for representation and
+											recognition of human actions.</em>, ICASSP, 2013. [<a href="http://www.public.asu.edu/~ranirudh/papers/anirudh_icassp13.pdf">pdf</a>]
+									</li>
+        <li>Anirudh, R., Venkataraman, V., Natesan Ramamurthy, K., &amp; Turaga, P., <em>A
+											Riemannian framework for statistical analysis of topological persistence
+											diagrams, </em>CVPR Workshops 2016 [<a href="http://www.cv-foundation.org/openaccess/content_cvpr_2016_workshops/w23/papers/Anirudh_A_Riemannian_Framework_CVPR_2016_paper.pdf">pdf</a>].
+										[<a href="https://github.com/rushilanirudh/pdsphere">code</a>]</li>
+        <li>Som, A., Anirudh, R., Wang, Q., &amp; Turaga, P.,<em> Riemannian geometric
+											approaches for measuring movement quality,</em> CVPR Workshops
+										2016 [<a href="http://www.cv-foundation.org/openaccess/content_cvpr_2016_workshops/w23/papers/Som_Riemannian_Geometric_Approaches_CVPR_2016_paper.pdf">pdf</a>].
+									</li>
+        <li>Wang, Q., Anirudh, R., &amp; Turaga, P., <em>Temporal Reflection Symmetry of
+											Human Actions: A Riemannian Analysis</em>, BMVC Workshops 2015. [<a href="http://www.bmva.org/bmvc/2015/diffcv/papers/paper010/paper010.pdf" rel="noreferrer noopener" target="_blank">pdf</a>].</li>
+        <li>Anirudh, R., Venkataraman, V., &amp; Turaga, P., <em>A Generalized Lyapunov
+											Feature for Dynamical Systems on Riemannian Manifolds, </em>BMVC
+										Workshops 2015 [<a href="https://pdfs.semanticscholar.org/8cd3/e49652a35cc0c843681a55461360909e5a1d.pdf">pdf</a>].
+									</li>
+        <li>Krzyzaniak, M., Anirudh, R., Venkataraman, V., Turaga, P., &amp; Wei, S. X.
+										<em>Towards realtime measurement of connectedness in human
+											movement. </em>In Proceedings of the 2nd International Workshop on
+										Movement and Computing (MOCO), 2015. [<a href="http://michaelkrzyzaniak.com/Research/Connectedness.pdf">pdf</a>]</li>
+      </ul>
+
+      <h4>Other Unpublished Work</h4>
+      <ul>
+        <li>(2022) <em>On-the-fly Object Detection using StyleGAN with CLIP Guidance</em>
+										[<a href="https://arxiv.org/abs/2210.16742" rel="noreferrer noopener" target="_blank">arXiv</a>]</li>
+        <li><em>Shape Pattern Recognition using the Euclidean Distance Method</em>,
+										Undergraduate Thesis Project, April 2010. <a href="docs/major-project-report.pdf" title="Major Project Report">(pdf)</a>
+</li>
+        <li><em>Frequency-Domain Adaptive Noise Cancellation.</em>  (DSP Term Project),
+										Nov 2010. <a href="docs/dsp_reportmain.pdf" title="dsp_reportmain">(pdf)</a>
+</li>
+        <li><em>An OpenCV Implementation of Supervised Texture Segmentation Using Gabor
+											Filters. </em>(Digital Image Processing Term
+										Project)<em> </em>April 2011. (<a href="docs/dip_report.pdf" title="dip_report">pdf</a>)
+									</li>
+        <li><em>Validation of the cortical homunculus using
+											functional-MRI. </em>(Biomedical Image Processing Term Project), Jan
+										2012. (<a href="docs/homunculus.pdf" title="homunculus">pdf</a>)
+									</li>
+        <li><em>ceci n' est pas une code</em>, R. Anirudh, M. Krzyzaniak, A. Faith, S.
+										Lohit, Sep 2015.<br/> Inspired by the <a href="https://www.youtube.com/watch?v=atHQpANmHCE&amp;vl=en-US" rel="noopener noreferrer" target="_blank">"The Treachery of Images"</a>.<br/> Displayed on the walls of
+										Stauffer-B at Arizona State University. (<a href="docs/quine-1.pdf" rel="noopener noreferrer" target="_blank" title="quine (1)">original pdf</a>) (<a href="images/quine_ondisplay.jpg" rel="noreferrer noopener" target="_blank">on display</a>)</li>
+      </ul>
+
+    </main>
+    <footer>
+      <p>© 2026 Rushil Anirudh</p>
+    </footer>
+  </div>
+</body>
+
+</html>
