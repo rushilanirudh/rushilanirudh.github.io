@@ -6,392 +6,8 @@
   <title>Rushil Anirudh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --bg-light: #fdfbf9;
-      --bg-card: #fff8f0;
-      --accent-warm: #e67e22;
-      --accent-warm-dim: #d35400;
-      --accent-blue: #1e3a8a;
-      --accent-blue-light: #3b82f6;
-      --text-primary: #1a1a1a;
-      --text-secondary: #555555;
-      --text-tertiary: #888888;
-      --border: #f0e6dc;
-      --border-blue: #dbeafe;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg-light);
-      color: var(--text-primary);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Header */
-    header {
-      padding: 60px 0 40px;
-      border-bottom: 2px solid var(--accent-blue);
-      background: linear-gradient(to bottom, #f8fafc 0%, var(--bg-light) 100%);
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .profile-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent-blue);
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
-    }
-
-    .profile-photo:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
-    }
-
-    .header-text h1 {
-      font-size: 48px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-      font-family: 'Lora', Georgia, serif;
-    }
-
-    .header-text .tagline {
-      font-size: 19px;
-      color: var(--text-secondary);
-      font-weight: 400;
-      letter-spacing: 0.01em;
-      font-style: italic;
-      font-family: 'Lora', Georgia, serif;
-    }
-
-    /* Navigation */
-    nav {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-      background: white;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      transition: all 0.2s ease;
-      letter-spacing: 0.01em;
-      background: white;
-    }
-
-    nav a:hover {
-      background: var(--accent-blue);
-      color: white !important;
-      border-color: var(--accent-blue);
-      transform: translateY(-1px);
-      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);
-    }
-
-    /* Main Content */
-    main {
-      padding: 48px 0;
-    }
-
-    .intro {
-      font-size: 19px;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 56px;
-      max-width: 900px;
-      font-style: italic;
-      font-family: 'Lora', Georgia, serif;
-    }
-
-    /* Section Headers */
-    h2 {
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin-bottom: 28px;
-      position: relative;
-      padding-left: 16px;
-      color: var(--accent-blue);
-      font-family: 'Lora', Georgia, serif;
-    }
-
-    h2::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 22px;
-      background: var(--accent-warm);
-      border-radius: 2px;
-    }
-
-    /* Timeline - Wrapping Grid */
-    .timeline {
-      margin-bottom: 56px;
-    }
-
-    .timeline-track {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px 16px;
-      position: relative;
-    }
-
-    .timeline-item {
-      position: relative;
-    }
-
-    .timeline-content {
-      background: white;
-      border: 2px solid var(--border-blue);
-      border-radius: 12px;
-      padding: 16px 12px;
-      text-align: center;
-      transition: all 0.3s ease;
-      position: relative;
-      box-shadow: 0 2px 8px rgba(30, 58, 138, 0.08);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .timeline-item:hover .timeline-content {
-      border-color: var(--accent-blue);
-      box-shadow: 0 4px 16px rgba(30, 58, 138, 0.15);
-      transform: translateY(-4px);
-    }
-
-    .timeline-dot {
-      width: 14px;
-      height: 14px;
-      background: white;
-      border: 3px solid var(--accent-blue);
-      border-radius: 50%;
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: all 0.2s ease;
-      z-index: 2;
-    }
-
-    .timeline-item:hover .timeline-dot {
-      background: var(--accent-blue);
-      box-shadow: 0 0 16px rgba(30, 58, 138, 0.4);
-    }
-
-    .timeline-role {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--accent-blue);
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    .timeline-company {
-      font-size: 14px;
-      color: var(--text-primary);
-      font-weight: 500;
-      margin-bottom: 10px;
-      line-height: 1.3;
-      font-style: italic;
-      flex-grow: 1;
-      font-family: 'Lora', Georgia, serif;
-    }
-
-    .timeline-date {
-      font-size: 10px;
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--text-tertiary);
-      font-weight: 500;
-      padding-top: 8px;
-      border-top: 1px solid var(--border);
-      margin-top: auto;
-    }
-
-    @media (max-width: 768px) {
-      .timeline-track {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding-left: 32px;
-      }
-
-      .timeline-item::before {
-        content: '';
-        position: absolute;
-        left: -26px;
-        top: 0;
-        bottom: -24px;
-        width: 2px;
-        background: linear-gradient(180deg, var(--accent-blue) 0%, var(--border-blue) 100%);
-      }
-
-      .timeline-item:last-child::before {
-        bottom: 50%;
-      }
-
-      .timeline-dot {
-        position: absolute;
-        left: -32px;
-        top: 20px;
-        transform: none;
-      }
-
-      .timeline-content {
-        text-align: left;
-      }
-    }
-
-    /* Publications */
-    .publication {
-      background: white;
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 16px;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-    }
-
-    .publication:hover {
-      border-color: var(--accent-warm);
-      box-shadow: 0 4px 16px rgba(230, 126, 34, 0.12);
-      transform: translateY(-2px);
-    }
-
-    .pub-badge {
-      display: inline-block;
-      background: var(--accent-warm);
-      color: white;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 6px;
-      margin-bottom: 12px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .pub-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 10px;
-      line-height: 1.5;
-      font-family: 'Lora', Georgia, serif;
-    }
-
-    .pub-description {
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 14px;
-      font-style: italic;
-      font-family: 'Lora', Georgia, serif;
-    }
-
-    .pub-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .pub-link {
-      color: var(--accent-blue-light);
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 6px 14px;
-      border: 1px solid var(--accent-blue-light);
-      border-radius: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .pub-link:hover {
-      background: var(--accent-blue);
-      border-color: var(--accent-blue);
-      color: white;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 2px solid var(--accent-blue);
-      padding: 32px 0;
-      text-align: center;
-      color: var(--text-tertiary);
-      font-size: 14px;
-      background: #f8fafc;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 28px;
-      }
-
-      .header-text h1 {
-        font-size: 32px;
-      }
-
-      .header-text .tagline {
-        font-size: 15px;
-      }
-
-      nav ul {
-        justify-content: center;
-      }
-
-      h2 {
-        font-size: 22px;
-      }
-
-      .intro {
-        font-size: 15px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -407,11 +23,11 @@
 
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="publications.html">Publications</a></li>
-        <li><a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Scholar</a></li>
-        <li><a href="https://www.linkedin.com/in/rushilanirudh/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=WkoIlpQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/rushilanirudh/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </nav>
 
@@ -470,7 +86,18 @@
 
       <section>
         <h2>Recent Work</h2>
-        
+
+        <div class="publication">
+          <span class="pub-badge">Amazon Science 2025</span>
+          <div class="pub-title">Optimizing LoRA Target Module Selection for Efficient Fine-Tuning</div>
+          <div class="pub-description">
+            Identifies optimal subsets of LoRA target-module configurations for Amazon Nova models, achieving the best trade-off between efficiency and accuracy across diverse customer use cases.
+          </div>
+          <div class="pub-links">
+            <a href="https://www.amazon.science/blog/optimizing-lora-target-module-selection-for-efficient-fine-tuning" target="_blank" rel="noopener" class="pub-link">Blog →</a>
+          </div>
+        </div>
+
         <div class="publication">
           <span class="pub-badge">AWS Re:Invent 2025</span>
           <div class="pub-title">Amazon Nova Forge</div>
@@ -478,7 +105,7 @@
             The easiest and most cost-effective way to build your own frontier model.
           </div>
           <div class="pub-links">
-            <a href="https://aws.amazon.com/nova/forge/" target="_blank" class="pub-link">Product →</a>
+            <a href="https://aws.amazon.com/nova/forge/" target="_blank" rel="noopener" class="pub-link">Product →</a>
           </div>
         </div>
 
@@ -489,7 +116,7 @@
             Explores shortcomings of anchoring for ViTs and fixes them to show significant improvements in ImageNet-1K OOD detection, calibration, and generalization benchmarks.
           </div>
           <div class="pub-links">
-            <a href="https://arxiv.org/pdf/2406.00529" target="_blank" class="pub-link">arXiv →</a>
+            <a href="https://arxiv.org/pdf/2406.00529" target="_blank" rel="noopener" class="pub-link">arXiv →</a>
           </div>
         </div>
 
@@ -500,7 +127,7 @@
             Failures in classifiers are clear (mis-classification rate) and well studied (OOD detection etc.), but very tricky in regression problems. PAGER takes a step in formalizing failure analysis using a combination of epistemic and non-conformity scores.
           </div>
           <div class="pub-links">
-            <a href="https://openreview.net/forum?id=5353dJE9Ek" target="_blank" class="pub-link">OpenReview →</a>
+            <a href="https://openreview.net/forum?id=5353dJE9Ek" target="_blank" rel="noopener" class="pub-link">OpenReview →</a>
           </div>
         </div>
 
@@ -511,8 +138,8 @@
             Introduces G-ΔUQ (pronounced "G-DUCK"), a novel training protocol for graph neural networks that supports reliable epistemic uncertainty estimates for graph classification and node classification tasks. Lot of SoTA results!
           </div>
           <div class="pub-links">
-            <a href="https://openreview.net/forum?id=ZL6yd6N1S2" target="_blank" class="pub-link">OpenReview →</a>
-            <a href="https://pujacomputes.github.io/gduq/" target="_blank" class="pub-link">Project Page →</a>
+            <a href="https://openreview.net/forum?id=ZL6yd6N1S2" target="_blank" rel="noopener" class="pub-link">OpenReview →</a>
+            <a href="https://pujacomputes.github.io/gduq/" target="_blank" rel="noopener" class="pub-link">Project Page →</a>
           </div>
         </div>
 
@@ -523,7 +150,7 @@
             New training and model selection protocol for Transformer surrogates, which improve existing methods on few-shot adaption to real world ICF experiments by ~40% improvement in predictive performance.
           </div>
           <div class="pub-links">
-            <a href="https://iopscience.iop.org/article/10.1088/2632-2153/ad4e03" target="_blank" class="pub-link">Article →</a>
+            <a href="https://iopscience.iop.org/article/10.1088/2632-2153/ad4e03" target="_blank" rel="noopener" class="pub-link">Article →</a>
           </div>
         </div>
       </section>
